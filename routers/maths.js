@@ -1,11 +1,12 @@
 const express = require('express')
 const routerMaths = express.Router() //ruteador de express
-const {divisionController} = require("../controllers/divisionController")
-const {additionController} = require("../controllers/additionController")
+const {divisionController, additionController, accessController} = require("../controllers/mathController")
 
 
-routerMaths.get ('/:dividendo/:divisor', divisionController)
+routerMaths.get ('/division/:dividendo/:divisor', divisionController)
 
-routerMaths.get ('/:a/:b', additionController)
+routerMaths.get ('/sumar/:a/:b', additionController)
+
+routerMaths.get ('/acceso/', accessController)
 
 module.exports = routerMaths;
